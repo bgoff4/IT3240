@@ -2,22 +2,21 @@
 <html>
     <head>
         <title>Different style sheets</title> 
-      <!--
-        <link href = "styles.css" rel = "stylesheet">
-        
+        <link rel="stylesheet" href="stylesheets/styles.css">
         <style>
-             
-            body{
-                background-color: antiquewhite;
-                
+            nav ul {
+                display: flex;
+                list-style-type: none;
+                padding: 0;
             }
-        
+            nav ul li {
+                margin-right: 20px;
+            }
         </style>
-        -->
     </head>
     
     <body>
-      <h1 style = "color: urple;margin-left: 500px">Ways to use CSS</h1>
+      <h1 style="color: purple; margin-left: 500px">Ways to use CSS</h1>
     <p> Cascade Style sheets is used to specify how the HTML elements should display in the web browser. There are three ways to apply styles to the document:</p>
         <ul>
             <li>Inline</li>
@@ -27,6 +26,14 @@
         <p>
             Inline style sheets are applied directly to the HTML element. Internal style sheet is used to apply style to a single web page. External style sheet can be used to apply style to more than one web pages in a website.
         </p>
-
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="rescue.html">Rescue Today</a></li>
+                <li><a href="donate.html">Donate Today</a></li>
+            </ul>
+        </nav>
     </body>
 </html>

@@ -19,7 +19,7 @@ nav ul {
     display: flex;
     list-style-type: none;
     padding: 0;
-    background-image: url('https://github.com/bgoff4/IT3240/blob/main/Jax.jpeg');
+    background-image: url('./images/Jax.jpeg'); /* Updated to local path */
     background-size: cover;
     justify-content: space-around; /* Distribute items evenly */
 }
