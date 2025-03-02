@@ -21,13 +21,18 @@ nav ul {
     padding: 0;
     background-image: url('https://github.com/bgoff4/IT3240/blob/main/Jax.jpeg');
     background-size: cover;
+    justify-content: space-around; /* Distribute items evenly */
 }
 nav ul li {
     margin-right: 10px;
+    flex: 1; /* Make each item take equal space */
 }
 nav ul li a {
     text-decoration: none;
     color: #000;
+    display: block;
+    text-align: center; /* Center the text */
+    padding: 10px; /* Add some padding */
 }
 
 p {
