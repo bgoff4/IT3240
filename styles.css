@@ -19,6 +19,8 @@ nav ul {
     display: flex;
     list-style-type: none;
     padding: 0;
+    background-image: url('https://github.com/bgoff4/IT3240/blob/main/Jax.jpeg');
+    background-size: cover;
 }
 nav ul li {
     margin-right: 10px;
@@ -26,4 +28,12 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: #000;
+}
+
+p {
+    color: rgb(135, 135, 209);
+}
+
+ul {
+    font-family: arial;
 }
