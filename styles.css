@@ -19,26 +19,21 @@ nav ul {
     display: flex;
     list-style-type: none;
     padding: 0;
-    background-image: url('./images/Jax.jpeg'); /* Updated to local path */
-    background-size: cover;
-    justify-content: space-around; /* Distribute items evenly */
 }
 nav ul li {
     margin-right: 10px;
-    flex: 1; /* Make each item take equal space */
 }
 nav ul li a {
     text-decoration: none;
     color: #000;
-    display: block;
-    text-align: center; /* Center the text */
-    padding: 10px; /* Add some padding */
 }
 
-p {
-    color: rgb(135, 135, 209);
+.logo-image {
+    width: 200px;
+    height: auto;
 }
 
-ul {
-    font-family: arial;
+.rescue-image {
+    width: 300px;
+    height: auto;
 }
