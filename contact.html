@@ -14,6 +14,21 @@
         nav ul li {
             margin-right: 20px;
         }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .row {
+            display: flex;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .column {
+            flex: 1;
+            min-width: 300px;
+            margin: 10px;
+        }
     </style>
 </head>
 <body>
@@ -37,6 +52,36 @@
         <section id="home">
             <h2>Welcome to DoggieRescue</h2>
             <p>We are dedicated to rescuing and rehoming dogs in need. Explore our website to learn more about our mission and how you can help.</p>
+            <div class="container">
+                <div class="row">
+                    <div class="column">
+                        <h3>Contact Information</h3>
+                        <p>Email: contact@doggierescue.com</p>
+                        <p>Phone: (123) 456-7890</p>
+                    </div>
+                    <div class="column">
+                        <h3>Visit Us</h3>
+                        <p>123 Doggie Lane</p>
+                        <p>Rescue City, RC 12345</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <h3>Follow Us</h3>
+                        <p>Stay connected through our social media channels:</p>
+                        <ul>
+                            <li><a href="https://www.facebook.com/doggierescue" target="_blank">Facebook</a></li>
+                            <li><a href="https://www.twitter.com/doggierescue" target="_blank">Twitter</a></li>
+                            <li><a href="https://www.instagram.com/doggierescue" target="_blank">Instagram</a></li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h3>Support Us</h3>
+                        <p>Your support helps us rescue and care for more dogs. Consider making a donation today.</p>
+                        <a href="donate.html" class="donate-button">Donate Now</a>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <footer>
