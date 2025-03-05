@@ -21,6 +21,33 @@
             padding: 10px;
             color: #000;
         }
+        .gallery-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+        }
+        .gallery-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .gallery-images img {
+            width: 100%;
+            flex-shrink: 0;
+        }
+        .rescue-image {
+            position: relative;
+            z-index: 1;
+        }
+        .video-container {
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        .video-container video {
+            width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -51,7 +78,25 @@
                 <li>Donate to support our mission</li>
             </ul>
             <p>Every little bit helps and makes a big difference in the lives of these dogs. Thank you for your support!</p>
+            <div class="gallery-container">
+                <div class="gallery-images">
+                    <img src="IMG_6180.jpeg" alt="Gallery Image 1">
+                    <img src="IMG_6331.jpeg" alt="Gallery Image 2">
+                    <img src="IMG_6344.jpeg" alt="Gallery Image 3">
+                    <img src="IMG_6378.jpeg" alt="Gallery Image 4">
+                    <img src="IMG_6379.jpeg" alt="Gallery Image 5">
+                    <img src="IMG_6473.jpeg" alt="Gallery Image 6">
+                    <img src="IMG_6578.jpeg" alt="Gallery Image 7">
+                </div>
+            </div>
             <img src="Opie.jpeg" alt="Rescue Me" class="rescue-image">
+            <div class="video-container">
+
+                <video controls allowfullscreen>
+                    <source src="jaxhalloween.mpv" type="video/quicktime">
+                    
+                </video>
+            </div>
         </section>
     </main>
     <footer>
@@ -63,5 +108,16 @@
             <a href="https://www.instagram.com/doggierescue" target="_blank">Instagram</a>.
         </p>
     </footer>
+    <script>
+        const galleryImages = document.querySelector('.gallery-images');
+        let index = 0;
+
+        function showNextImage() {
+            index = (index + 1) % galleryImages.children.length;
+            galleryImages.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        setInterval(showNextImage, 3000);
+    </script>
 </body>
 </html>
