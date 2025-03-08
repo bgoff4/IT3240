@@ -1,121 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DoggieRescue</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            background-color: #f0f8ff; /* Light blue background color */
-        }
-        header {
-            background-color: #ffebcd; /* Blanched almond background color */
-        }
-        footer {
-            background-color: #dcdcdc; /* Light blue background color */
-        }
-        main {
-            background-color: #ffffff; /* Light blue color */
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #ffebcd; /* Blanched almond background color */
-            flex-wrap: wrap;
-        }
-        nav ul {
-            display: flex;
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-        nav ul li {
-            margin-right: 10px;
-        }
-        nav ul li a {
-            text-decoration: none;
-            color: #000;
-        }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            width: 100%;
-            margin-bottom: 20px;
-        }
-        .column {
-            flex: 1;
-            min-width: 300px;
-            margin: 10px;
-            box-sizing: border-box;
-        }
-    </style>
+	<meta charset="UTF-8">
+	<title>Invitation Form</title>
+	<script src="../week6/Assignments/js/invitation.js"></script> <!-- Update the path as necessary -->
 </head>
 <body>
-    <header>
-        <!--Header Image for website-->
-        <h1>DoggieRescue</h1>
-        <img src="Jax.jpeg" alt="doggierescue Logo" class="logo-image">
-        <nav>
-            <!--navigation bar for website-->
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#rescue">Rescue Today</a></li>
-                <li><a href="#donate">Donate Today</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section id="pageForm">
-        <h2 style="font-size: 14px;">Doggie Rescue</h2>
-        <h2>Invitation Form</h2>
-        <form id="invitationForm" action="submit_adoption_request.php" method="POST">
-            <label for="recipientNameInput">Recipient name:</label>
-            <input type="text" name="recipientNameInput" id="recipientNameInput" placeholder="Enter your Recipient Name">
-
-            <label for="hostNameInput">Host name:</label>
-            <input type="text" name="hostNameInput" id="hostNameInput" placeholder="Enter your Name">
-
-            <input type="submit" value="Submit" onclick="replaceContent();return false;">
-        </form>
-    </section>
-
-
-    <article id="placeholderContent">
-        <h2>Invitation Details</h2>
-        Hello <span id="recipientNamePlaceholder">recipientName</span>!
-        <br>
-        <br> You have been invited to volunteer for an event held on July 1st. Please respond to this email to sign up as a volunteer.
-        <br>
-        <br> Thanks!
-        <br>
-        <br>
-        <span id="hostNamePlaceholder">hostName</span>
-    </article>
-    <footer>
-        <!--Footer for website-->
-        <p>&copy; 2025 doggierescue.com All rights reserved.</p>
-        <p>Follow us on 
-            <a href="https://www.facebook.com/doggierescue" target="_blank">Facebook</a>, 
-            <a href="https://www.twitter.com/doggierescue" target="_blank">Twitter</a>, and 
-            <a href="https://www.instagram.com/doggierescue" target="_blank">Instagram</a>.
-        </p>
-    </footer>
-    <script>
-        function replaceContent() {
-            var myRecipientName = document.getElementById('recipientNameInput').value;
-            var myHostName = document.getElementById('hostNameInput').value;
-            document.getElementById('recipientNamePlaceholder').innerHTML = myRecipientName;
-            document.getElementById('hostNamePlaceholder').innerHTML = myHostName;
-        }
-    </script>
+	<form id="myForm">
+		<label for="recipientNameInput">Recipient Name:</label>
+		<input type="text" id="recipientNameInput" name="recipientNameInput">
+		<button type="submit">Submit</button>
+	</form>
+	<p>Dear <span id="recipientNamePlaceholder"></span>, you are invited!</p>
 </body>
 </html>
