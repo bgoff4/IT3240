@@ -1,5 +1,7 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $recipientName = htmlspecialchars($_POST['recipientNameInput']);
+    $hostName = htmlspecialchars($_POST['hostNameInput']);
     $name = htmlspecialchars($_POST['name']);
     $email = htmlspecialchars($_POST['email']);
     $phone = htmlspecialchars($_POST['phone']);
@@ -10,6 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Process the form data (e.g., save to a database, send an email, etc.)
     // For now, we'll just display the data
+    echo "Recipient Name: $recipientName<br>";
+    echo "Host Name: $hostName<br>";
     echo "Name: $name<br>";
     echo "Email: $email<br>";
     echo "Phone: $phone<br>";
