@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>Invitation Page</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <style>
+      nav ul {
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          justify-content: space-around;
+          flex-wrap: wrap;
+      }
+      nav ul li {
+          display: inline;
+      }
+      nav ul li a {
+          text-decoration: none;
+          padding: 10px;
+          color: #000;
+      }
+      .container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+      }
+      .row {
+          display: flex;
+          flex-wrap: wrap;
+          width: 100%;
+          margin-bottom: 20px;
+      }
+      .column {
+          flex: 1;
+          min-width: 300px;
+          margin: 10px;
+          box-sizing: border-box;
+      }
+      #bannerImages img {
+          display: none;
+      }
+      #bannerImages img.active {
+          display: block;
+      }
+  </style>
+  </head>
+
+<body>
+  <header>
+    <!--Header Image for website-->
+    <h1>DoggieRescue</h1>
+    <img src="Jax.jpeg" alt="doggierescue Logo" class="logo-image">
+    <nav>
+        <!--navigation bar for website-->
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="rescue.html">Rescue Today</a></li>
+            <li><a href="donate.html">Donate Today</a></li>
+        </ul>
+    </nav>
+</header>
+    <section id="gallery">
+
+<div class="gallery">
+  <a target="_blank" href="images/firefighter.jpg">
+    <img src="images/firefighter.jpg" alt="firefighter" width="300" height="200">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="images/work.jpg">
+    <img src="images/work.jpg" alt="work" width="300" height="200">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="images/silhouette.jpg">
+    <img src="images/silhouette.jpg" alt="silhouette" width="300" height="200">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="images/event.jpg">
+    <img src="images/event.jpg" alt="event" width="300" height="200">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+    </section>
+
+
+
+    <footer>This events site is for IT3515 tasks.
+    </footer>
+</body>
+
+</html>

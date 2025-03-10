@@ -39,7 +39,50 @@
             margin: 10px;
             box-sizing: border-box;
         }
+        #bannerImages img {
+            display: none;
+        }
+        #bannerImages img.active {
+            display: block;
+        }
     </style>
+    <script>
+        function onPageLoad() {
+            preloadImages();
+            cycleImages();
+            setInterval(cycleImages, 3000);
+        }
+
+        function preloadImages() {
+            const images = ["images/banner1.jpg", "images/banner2.jpg", "images/banner3.jpg"];
+            images.forEach(src => {
+                const img = new Image();
+                img.src = src;
+            });
+        }
+
+        function cycleImages() {
+            const images = ["images/banner1.jpg", "images/banner2.jpg", "images/banner3.jpg"];
+            let currentIndex = 0;
+            const bannerImages = document.querySelectorAll("#bannerImages img");
+            bannerImages.forEach((img, index) => {
+                img.classList.remove("active");
+                if (index === currentIndex) {
+                    img.classList.add("active");
+                }
+            });
+            currentIndex = (currentIndex + 1) % images.length;
+        }
+
+        function rolloverImage(event) {
+            const image = event.target;
+            const originalSrc = image.src;
+            image.src = image.dataset.rollover;
+            image.dataset.rollover = originalSrc;
+        }
+
+        document.addEventListener("DOMContentLoaded", onPageLoad);
+    </script>
 </head>
 <body>
     <header>
@@ -63,6 +106,12 @@
             <h2>Welcome to Doggie Rescue</h2>
             <p>Doggie Rescue is a non-profit organization dedicated to rescuing and rehoming abandoned dogs. Our mission is to provide a safe haven for dogs in need and to find them loving forever homes.</p>
         </section>
+        <section id="bannerImages">
+            Banner Images<br/>
+            <img src="images/banner1.jpg" alt="Banner" class="active"/>
+            <img src="images/banner2.jpg" alt="Banner"/>
+            <img src="images/banner3.jpg" alt="Banner"/>
+        </section>
         <div class="container">
             <div class="row">
                 <section id="about" class="column">
@@ -73,6 +122,9 @@
                     <h2>Contact Us</h2>
                     <p>If you have any questions or would like to get involved, please reach out to us. You can email us at <a href="mailto:info@doggierescue.com">info@doggierescue.com</a> or call us at (123) 456-7890. We look forward to hearing from you!</p>
                 </section>
+            </div>
+            <div class="row">
+                <button onclick="location.href='gallery.html'">Gallery</button>
             </div>
         </div>
     </main>
