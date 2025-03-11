@@ -50,11 +50,11 @@
         function onPageLoad() {
             preloadImages();
             cycleImages();
-            setInterval(cycleImages, 3000);
+            setInterval(cycleImages, 20000); // Change image every 20 seconds
         }
 
         function preloadImages() {
-            const images = ["images/banner1.jpg", "images/banner2.jpg", "images/banner3.jpg"];
+            const images = ["images/banner1.jpg", "images/banner2.jpg", "images/banner3.jpg", "Jax.jpeg"];
             images.forEach(src => {
                 const img = new Image();
                 img.src = src;
@@ -62,7 +62,7 @@
         }
 
         function cycleImages() {
-            const images = ["images/banner1.jpg", "images/banner2.jpg", "images/banner3.jpg"];
+            const images = ["images/banner1.jpg", "images/banner2.jpg", "images/banner3.jpg", "Jax.jpeg"];
             let currentIndex = 0;
             const bannerImages = document.querySelectorAll("#bannerImages img");
             bannerImages.forEach((img, index) => {
@@ -114,6 +114,7 @@
             <img src="images/banner1.jpg" alt="Banner" class="active"/>
             <img src="images/banner2.jpg" alt="Banner"/>
             <img src="images/banner3.jpg" alt="Banner"/>
+            <img src="Jax.jpeg" alt="Banner"/>
         </section>
         <div class="container">
             <div class="row">
