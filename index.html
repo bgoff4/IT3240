@@ -47,6 +47,8 @@
         }
     </style>
     <script>
+        let currentIndex = 0; // Move currentIndex outside of cycleImages
+
         function onPageLoad() {
             preloadImages();
             cycleImages();
@@ -63,7 +65,6 @@
 
         function cycleImages() {
             const images = ["images/banner1.jpg", "images/banner2.jpg", "images/banner3.jpg", "Jax.jpeg"];
-            let currentIndex = 0;
             const bannerImages = document.querySelectorAll("#bannerImages img");
             bannerImages.forEach((img, index) => {
                 img.classList.remove("active");
@@ -83,6 +84,7 @@
 
         document.addEventListener("DOMContentLoaded", onPageLoad);
     </script>
+    <script src="gallery.js"></script> <!-- Link to gallery.js -->
 </head>
 <body>
     <header>
@@ -120,7 +122,7 @@
             <div class="row">
                 <section id="about" class="column">
                     <h2>About Us</h2>
-                    <p>Founded in 2009, Doggie Rescue has saved thousands of dogs from shelters and the streets. We rely on the support of volunteers and donations to continue our work. Our team is passionate about animal welfare and committed to making a difference in the lives of dogs.</p>
+                    <p>Founded in 2008, Doggie Rescue has saved thousands of dogs from shelters and the streets. We rely on the support of volunteers and donations to continue our work. Our team is passionate about animal welfare and committed to making a difference in the lives of dogs.</p>
                 </section>
                 <section id="contact" class="column">
                     <h2>Contact Us</h2>
