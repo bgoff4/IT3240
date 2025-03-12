@@ -7,7 +7,8 @@ function preloadImages() {
         'images/firefighter.jpg',
         'images/work.jpg',
         'images/silhouette.jpg',
-        'images/event.jpg'
+        'images/event.jpg',
+        'Jax.jpeg'
     ];
 
     for (let i = 0; i < imagePaths.length; i++) {
@@ -45,7 +46,7 @@ function cycleBanner() {
         bannerImages[currentIndex].classList.remove('active');
         currentIndex = (currentIndex + 1) % bannerImages.length;
         bannerImages[currentIndex].classList.add('active');
-    }, 3000); // Change image every 3 seconds
+    }, 20000); // Change image every 20 seconds
 }
 
 // Function to handle page load

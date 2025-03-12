@@ -47,11 +47,8 @@
         }
     </style>
     <script>
-        let currentIndex = 0; // Move currentIndex outside of cycleImages
-
         function onPageLoad() {
             preloadImages();
-            cycleImages();
             setInterval(cycleImages, 20000); // Change image every 20 seconds
         }
 
@@ -61,18 +58,6 @@
                 const img = new Image();
                 img.src = src;
             });
-        }
-
-        function cycleImages() {
-            const images = ["images/banner1.jpg", "images/banner2.jpg", "images/banner3.jpg", "Jax.jpeg"];
-            const bannerImages = document.querySelectorAll("#bannerImages img");
-            bannerImages.forEach((img, index) => {
-                img.classList.remove("active");
-                if (index === currentIndex) {
-                    img.classList.add("active");
-                }
-            });
-            currentIndex = (currentIndex + 1) % images.length;
         }
 
         function rolloverImage(event) {
@@ -89,7 +74,7 @@
 <body>
     <header>
         <div class="top">
-            <a class="logo" href="index.html">DoggieRescue<span class="dotcom">.org</span></a>
+            <a class="logo" href="index.html">Doggie Rescue<span class="dotcom">.org</span></a>
         </div>
         <!--Header Image for website-->
         <h1>DoggieRescue</h1>
