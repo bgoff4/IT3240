@@ -49,7 +49,7 @@
     <script>
         function onPageLoad() {
             preloadImages();
-            setInterval(cycleImages, 20000); // Change image every 20 seconds
+            cycleBanner(); // Call cycleBanner instead of cycleImages
         }
 
         function preloadImages() {
@@ -69,7 +69,7 @@
 
         document.addEventListener("DOMContentLoaded", onPageLoad);
     </script>
-    <script src="gallery1.js"></script> <!-- Link to gallery.js -->
+    <script src="gallery1.js"></script> <!-- Link to gallery1.js -->
 </head>
 <body>
     <header>
