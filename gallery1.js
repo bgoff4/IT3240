@@ -4,10 +4,9 @@ const images = [];
 // Function to preload images
 function preloadImages() {
     const imagePaths = [
-        'images/firefighter.jpg',
-        'images/work.jpg',
-        'images/silhouette.jpg',
-        'images/event.jpg',
+        'images/banner1.jpg',
+        'images/banner2.jpg',
+        'images/banner3.jpg',
         'Jax.jpeg'
     ];
 
