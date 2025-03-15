@@ -35,8 +35,39 @@
             flex: 1;
             min-width: 300px;
             margin: 10px;
+            box-sizing: border-box;
+        }
+        #bannerImages img {
+            display: none;
+        }
+        #bannerImages img.active {
+            display: block;
         }
     </style>
+    <script>
+        function onPageLoad() {
+            preloadImages();
+            cycleBanner();
+        }
+
+        function preloadImages() {
+            const images = ["images/banner1.jpg", "images/banner2.jpg", "images/banner3.jpg", "Jax.jpeg"];
+            images.forEach(src => {
+                const img = new Image();
+                img.src = src;
+            });
+        }
+
+        function rolloverImage(event) {
+            const image = event.target;
+            const originalSrc = image.src;
+            image.src = image.dataset.rollover;
+            image.dataset.rollover = originalSrc;
+        }
+
+        document.addEventListener("DOMContentLoaded", onPageLoad);
+    </script>
+    <script src="gallery1.js"></script>
 </head>
 <body>
     <header>
@@ -45,7 +76,7 @@
         <img src="Jax.jpeg" alt="doggierescue Logo" class="logo-image">
         <nav>
             <!--navigation bar for website-->
-            <ul>
+            <ul class="topnav">
                 <li><a href="home.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -54,6 +85,13 @@
             </ul>
         </nav>
     </header>
+    <section id="bannerImages">
+        Banner Images<br/>
+        <img src="images/banner1.jpg" alt="Banner" class="active"/>
+        <img src="images/banner2.jpg" alt="Banner"/>
+        <img src="images/banner3.jpg" alt="Banner"/>
+        <img src="Jax.jpeg" alt="Banner"/>
+    </section>
     <main>
         <!--main section of website-->
         <section id="home">
@@ -64,7 +102,7 @@
             <div class="row">
                 <section id="about" class="column">
                     <h2>About Us</h2>
-                    <p>Founded in 2009, Doggie Rescue has saved thousands of dogs from shelters and the streets. We rely on the support of volunteers and donations to continue our work. Our team is passionate about animal welfare and committed to making a difference in the lives of dogs.</p>
+                    <p>Founded in 2005, Doggie Rescue has saved thousands of dogs from shelters and the streets. We rely on the support of volunteers and donations to continue our work. Our team is passionate about animal welfare and committed to making a difference in the lives of dogs.</p>
                 </section>
                 <section id="contact" class="column">
                     <h2>Contact Us</h2>
