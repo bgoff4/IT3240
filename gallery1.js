@@ -14,6 +14,18 @@ function preloadImages() {
         images[i] = new Image();
         images[i].src = imagePaths[i];
     }
+
+    // Preload banner images separately
+    const bannerImagePaths = [
+        'images/banner1.jpg',
+        'images/banner2.jpg',
+        'images/banner3.jpg'
+    ];
+
+    for (let i = 0; i < bannerImagePaths.length; i++) {
+        images.push(new Image());
+        images[images.length - 1].src = bannerImagePaths[i];
+    }
 }
 
 // Function to add roll-over functionality
@@ -44,6 +56,7 @@ function cycleBanner() {
     setInterval(() => {
         bannerImages[currentIndex].classList.remove('active');
         currentIndex = (currentIndex + 1) % bannerImages.length;
+        bannerImages[currentIndex].src = images[4 + currentIndex].src; // Use preloaded images
         bannerImages[currentIndex].classList.add('active');
     }, 20000); // Change image every 20 seconds
 }
