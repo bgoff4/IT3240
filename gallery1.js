@@ -4,9 +4,9 @@ const images = [];
 // Function to preload images
 function preloadImages() {
     const imagePaths = [
-        'images/banner1.jpg',
-        'images/banner2.jpg',
-        'images/banner3.jpg',
+        'banner1.jpg',
+        'banner2.jpg',
+        'banner3.jpg',
         'Jax.jpeg'
     ];
 
@@ -17,9 +17,10 @@ function preloadImages() {
 
     // Preload banner images separately
     const bannerImagePaths = [
-        'images/banner1.jpg',
-        'images/banner2.jpg',
-        'images/banner3.jpg'
+        'banner1.jpg',
+        'jax.jpeg',
+        'banner2.jpg',
+        'banner3.jpg'
     ];
 
     for (let i = 0; i < bannerImagePaths.length; i++) {
@@ -58,7 +59,7 @@ function cycleBanner() {
         currentIndex = (currentIndex + 1) % bannerImages.length;
         bannerImages[currentIndex].src = images[4 + currentIndex].src; // Use preloaded images
         bannerImages[currentIndex].classList.add('active');
-    }, 20000); // Change image every 20 seconds
+    }, 10000); // Change image every 10 seconds
 }
 
 // Function to handle page load
