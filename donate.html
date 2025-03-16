@@ -10,11 +10,43 @@
             display: flex;
             list-style-type: none;
             padding: 0;
+            margin: 0;
+            justify-content: space-around;
+            flex-wrap: wrap;
         }
         nav ul li {
             margin-right: 20px;
         }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .column {
+            flex: 1;
+            min-width: 300px;
+            margin: 10px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
     </style>
+    <script src="volunteers1.js"></script> <!-- Link to volunteer1.js -->
 </head>
 <body>
     <header>
@@ -44,7 +76,8 @@
                 <li>Donate supplies</li>
                 <li>Fundraise for us</li>
             </ul>
-            <p>Thank you for your generosity and support!</p>
+            <p>Thank you for your generosity and support! You can also help by volunteering</p>
+            <button onclick="location.href='volunteer.html'">Volunteer Today</button>
         </section>
     </main>
     <footer>
