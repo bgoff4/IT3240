@@ -73,9 +73,7 @@
                 return false;
             }
 
-            // If all validations pass, redirect to confirmation page
-            window.location.href = "confirmation.php";
-            return false;
+            return true;
         }
 
         function showError(input, message) {
@@ -109,7 +107,7 @@
         </nav>
     </header>
     <section id="pageForm">
-        <form onsubmit="return validateForm()">
+        <form action="confirmation.php" method="post" onsubmit="return validateForm()">
             <label for="userName">Username:</label>
             <input type="text" name="userName" placeholder="Enter your Username" />
 
