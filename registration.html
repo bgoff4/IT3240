@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Invitation Page</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script>
+        function validateForm() {
+            let form = document.forms[0];
+            let valid = true;
+            let errorMessage = "";
+
+            // Clear previous error messages
+            document.querySelectorAll('.error').forEach(e => e.remove());
+
+            // Username validation
+            let userName = form["userName"].value;
+            if (!/^[a-zA-Z0-9]+$/.test(userName)) {
+                errorMessage = "Username must only contain letters and numbers.";
+                showError(form["userName"], errorMessage);
+                valid = false;
+            }
+
+            // Password validation
+            let password = form["password"].value;
+            if (password.length < 8) {
+                errorMessage = "Password must be at least 8 characters.";
+                showError(form["password"], errorMessage);
+                valid = false;
+            }
+
+            // Password verify validation
+            let passwordVerify = form["passwordVerify"].value;
+            if (passwordVerify !== password) {
+                errorMessage = "Passwords do not match.";
+                showError(form["passwordVerify"], errorMessage);
+                valid = false;
+            }
+
+            // First name validation
+            let firstName = form["firstName"].value;
+            if (firstName.trim() === "") {
+                errorMessage = "First name is required.";
+                showError(form["firstName"], errorMessage);
+                valid = false;
+            }
+
+            // Last name validation
+            let lastName = form["lastName"].value;
+            if (lastName.trim() === "") {
+                errorMessage = "Last name is required.";
+                showError(form["lastName"], errorMessage);
+                valid = false;
+            }
+
+            // Email validation
+            let email = form["email"].value;
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                errorMessage = "Invalid email format.";
+                showError(form["email"], errorMessage);
+                valid = false;
+            }
+
+            // Phone number validation
+            let phoneNumber = form["phoneNumber"].value;
+            if (!/^\(\d{3}\) \d{3}-\d{4}$/.test(phoneNumber)) {
+                errorMessage = "Phone number must be in the format (xxx) xxx-xxxx.";
+                showError(form["phoneNumber"], errorMessage);
+                valid = false;
+            }
+
+            if (!valid) {
+                return false;
+            }
+
+            // If all validations pass, redirect to confirmation page
+            window.location.href = "confirmation.php";
+            return false;
+        }
+
+        function showError(input, message) {
+            let error = document.createElement('span');
+            error.className = 'error';
+            error.style.color = 'red';
+            error.innerText = message;
+            input.parentNode.insertBefore(error, input.nextSibling);
+            input.focus();
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="top">
+            <a class="logo" href="home.html">CapellaVolunteers<span class="dotcom">.org</span></a>
+        </div>
+        <nav>
+            <!--navigation bar for website-->
+            <ul class="topnav">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="rescue.html">Rescue Today</a></li>
+                <li><a href="donate.html">Donate Today</a></li>
+                <li><a href="registration.html" class="active">Registration</a>
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+    <section id="pageForm">
+        <form onsubmit="return validateForm()">
+            <label for="userName">Username:</label>
+            <input type="text" name="userName" placeholder="Enter your Username" />
+
+            <label for="Password">Password:
+            </label>
+            <input type="password" name="password" placeholder="Enter your Password" />
+
+            <label for="passwordVerify">Verify your Password:
+            </label>
+            <input type="password" name="passwordVerify" placeholder="Enter in your Password again" />
+
+            <label for="firstName">First Name:
+            </label>
+            <input type="text" name="firstName" placeholder="Enter your First Name" />
+
+            <label for="hostName">Last Name:
+            </label>
+            <input type="text" name="lastName" placeholder="Enter your Last Name" />
+            <label for="email">Email:
+            </label>
+            <input type="text" name="email" placeholder="Enter your Email Address" />
+			<label for="phoneNumber">Phone Number
+            </label>
+            <input type="text" name="phoneNumber" placeholder="Enter your Phone Number" />
+			<label for="signUpNewsletter">Sign up for newsletter:
+            </label>
+			  <input type="radio" name="signUpNewsletter" value="Yes" checked> Yes 
+				<input type="radio" name="signUpNewsletter" value="No"> No
+            <input type="submit" value="Next step">
+        </form>
+    </section>
+
+    <footer>This events site is for IT3240a tasks.
+    </footer>
+</body>
+
+</html>
