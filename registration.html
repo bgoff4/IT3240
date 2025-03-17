@@ -70,11 +70,22 @@
                 valid = false;
             }
 
-            if (!valid) {
+            if (valid) {
+                // Store form data in cookies
+                document.cookie = "userName=" + form["userName"].value;
+                document.cookie = "password=" + form["password"].value;
+                document.cookie = "firstName=" + form["firstName"].value;
+                document.cookie = "lastName=" + form["lastName"].value;
+                document.cookie = "email=" + form["email"].value;
+                document.cookie = "phoneNumber=" + form["phoneNumber"].value;
+                document.cookie = "signUpNewsletter=" + form["signUpNewsletter"].value;
+
+                // Redirect to transfercookie.html
+                window.location.href = "transfercookie.html";
                 return false;
             }
 
-            return true;
+            return valid;
         }
 
         function showError(input, message) {
@@ -102,6 +113,7 @@
                 <li><a href="rescue.html">Rescue Today</a></li>
                 <li><a href="donate.html">Donate Today</a></li>
                 <li><a href="registration.html" class="active">Registration</a>
+                    <li><a href="Confirmation.html" class="active">Confirmation</a>
                 </li>
             </ul>
 
@@ -138,7 +150,7 @@
         </form>
     </section>
 
-    <footer>This events site is for IT3240b tasks.
+    <footer>This events site is for IT3240c tasks.
     </footer>
 </body>
 

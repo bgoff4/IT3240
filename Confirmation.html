@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta charset="UTF-8">
+		<title>Confirmation URL</title>
+        <script>
+            function display() {
+                
+                
+                var url = window.location.href
+                <li><a href="registration.html" class="active">Registration</a>
+                url += 
+                document.getElementById('keyValue').innerHTML= url
+                
+                var key=[]
+                var value=[]
+                var string1= url.split('?')[1].split('&')		
+                
+                for(var i of string1)
+                    {
+                        var x=i.split('=')
+                        key.push(x[0])
+                        value.push(x[1])
+                    }
+                var counter=key.length
+                var displayString=''
+                
+                for( var i=0; i<counter; i++ )
+                    {
+                        displayString+=key[i]+':'+value[i]+ '<br />'
+                    }
+                document.getElementById('displayKey').innerHTML= displayString
+            }
+        
+        </script>
+	</head>
+	
+	
+	
+	
+	<body onload='display()'>
+		
+		<h3>Key Value pairs: </h3>
+		<br >
+		<div id='keyValue'></div>
+		<br >
+		<div id='displayKey'></div>
+		
+		
+	
+	
+	
+	
+	</body>
+</html>
